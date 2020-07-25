@@ -16,7 +16,6 @@ public class Thread_Sleep extends Thread
 			}
 			
 			System.out.println(i);
-			System.out.println(Thread.currentThread().getName());
 		}
 	}
 	
@@ -28,7 +27,6 @@ public class Thread_Sleep extends Thread
 		 System.out.println("Name of t1:"+ts1.getName());  
 		 System.out.println("Name of t2:"+ts2.getName());  
 		 System.out.println("id of t1:"+ts1.getId());  
-		 System.out.println("id of t1:"+ts2.getId()); 
 		
 		ts1.start();
 		
