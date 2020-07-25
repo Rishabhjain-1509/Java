@@ -13,8 +13,6 @@ public class Linked_List
 	public void insert_at_end(int d)
 	{
 		Node node = new Node();
-		node.data = d;
-		node.next = null;
 				
 		if(head == null )
 		{
@@ -30,6 +28,8 @@ public class Linked_List
 			}
 			
 			n.next = node;
+			node.data = d;
+			node.next = null;
 		}	
 	}
 	
@@ -80,6 +80,28 @@ public class Linked_List
 	    System.out.println(node.data);
 	}
 	
+	public void delete(int p)
+	{
+		Node n = head;
+		
+		if(p == 0)
+		{
+			head = head.next;
+		}
+		else
+		{
+			Node r = null;
+		     
+			for(int i=0;i<p-1;i++)
+		    {
+		        n=n.next;
+		    }
+				
+			r = n.next;
+			r.next = n.next;
+		}
+	}
+	
 	public static void main(String agrs[])
 	{
 		Linked_List ll = new Linked_List();
@@ -89,7 +111,8 @@ public class Linked_List
 		ll.insert_at_end(4);
 		ll.insert_at_end(3);
 		ll.insert_at_end(6);
-		ll.insert_at_anyp(9, 0);
+		ll.insert_at_anyp(9, 1);
+		ll.delete(3);
 		
 		
 		ll.show();
