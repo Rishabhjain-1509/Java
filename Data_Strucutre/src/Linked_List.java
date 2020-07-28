@@ -4,15 +4,21 @@ class Node
 {
 	int data;
 	Node next;
+	
+	Node(int d)
+	{
+		data = d;
+		
+	}
 }
 
-public class Linked_List 
+public class Linked_List extends Node
 {
 	Node head;
 	
 	public void insert_at_end(int d)
 	{
-		Node node = new Node();
+		Node node = new Node(d);
 				
 		if(head == null )
 		{
@@ -28,23 +34,22 @@ public class Linked_List
 			}
 			
 			n.next = node;
-			node.data = d;
 			node.next = null;
 		}	
 	}
 	
 	public void insert_at_begin(int d)
 	{
-		Node node = new Node();
+		Node node = new Node(d);
 		
-		node.data = d;
+		
 		node.next = head;
 		head = node;
 	}
 	
 	public void insert_at_anyp(int d,int p)
 	{
-		Node node = new Node();
+		Node node = new Node(d);
 		
 		if( p == 0)
 		{
@@ -63,7 +68,6 @@ public class Linked_List
 			
 			node.next = n.next;
 			n.next = node;
-			node.data = d;
 		}
 	}
 	
@@ -98,7 +102,7 @@ public class Linked_List
 		    }
 				
 			r = n.next;
-			r.next = n.next;
+			n.next = r.next;
 		}
 	}
 	
@@ -112,7 +116,7 @@ public class Linked_List
 		ll.insert_at_end(3);
 		ll.insert_at_end(6);
 		ll.insert_at_anyp(9, 1);
-		ll.delete(3);
+		ll.delete(0);
 		
 		
 		ll.show();
