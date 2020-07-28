@@ -5,7 +5,7 @@ class Node1
 	int data;
 	Node1 left ;
 	Node1 Right;
-	
+
 	Node1(int a)
 	{
 		data = a;
@@ -49,6 +49,7 @@ public class BST
 		{
 			return;
 		}
+		
 		System.out.println(ptr.data);
 		show(ptr.left);
 		show(ptr.Right);
